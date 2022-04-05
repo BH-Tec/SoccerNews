@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface NewsDao {
     void save(News news);
 
     @Query("SELECT * FROM news WHERE favorite = 1")
-    List<News> loadFavoriteNews();
+    LiveData<List<News>> loadFavoriteNews();
 }

@@ -69,6 +69,9 @@
             app:layout_constraintEnd_toStartOf="@+id/ivShared"
             app:layout_constraintTop_toTopOf="@+id/btnOpenLink"
             app:srcCompat="@drawable/ic_star"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
             android:contentDescription="@string/cd_favorite_icon" />
 
         <ImageView
@@ -80,6 +83,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnOpenLink"
             app:srcCompat="@drawable/ic_share"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
             android:contentDescription="@string/cd_shared_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

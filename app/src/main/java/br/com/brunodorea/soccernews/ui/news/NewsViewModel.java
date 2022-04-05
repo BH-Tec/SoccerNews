@@ -7,24 +7,47 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.brunodorea.soccernews.data.remote.SoccerNewsApi;
 import br.com.brunodorea.soccernews.domain.News;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsViewModel extends ViewModel {
 
-    private final MutableLiveData<List<News>> news;
+    private final MutableLiveData<List<News>> news = new MutableLiveData<>();
+    private final SoccerNewsApi api;
 
     public NewsViewModel() {
-        this.news = new MutableLiveData<>();
 
-        // Mock com dados fake
-        // TODO: Remover mock de noticias.
-        List<News> news = new ArrayList<>();
-        news.add(new News("Bahia","Eliminado na 1ª fase do Campeonato Baiano"));
-        news.add(new News("Atlético Mineiro","Campeão Mineiro"));
-        news.add(new News("Palmeiras","Campeão Paulista"));
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://brunodorea.github.io/SoccerNews_API//")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-        this.news.setValue(news);
+        api = retrofit.create(SoccerNewsApi.class);
+        findNews();
 
+    }
+
+    private void findNews() {
+        api.getNews().enqueue(new Callback<List<News>>() {
+            @Override
+            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                if(response.isSuccessful()){
+                    news.setValue((response.body()));
+                } else {
+                    // TODO: Pensar em um tratamento de erro.
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<News>> call, Throwable t) {
+                // TODO: Pensar em um tratamento de erro.
+            }
+        });
     }
 
     public LiveData<List<News>> getNews() {

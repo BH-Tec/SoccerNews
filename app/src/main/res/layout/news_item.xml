@@ -68,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/btnOpenLink"
             app:layout_constraintEnd_toStartOf="@+id/ivShared"
             app:layout_constraintTop_toTopOf="@+id/btnOpenLink"
-            app:srcCompat="@drawable/ic_star"
+            app:srcCompat="@drawable/ic_favorite"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"

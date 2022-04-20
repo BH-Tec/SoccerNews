@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bruno.dorea/Desktop/Projetos/labs-dio-mobile/app_SoccerNews/app/src/main/res/drawable/ic_favorite.xml" value="0.123" />
+        <entry key="..\:/Users/bruno.dorea/Desktop/Projetos/labs-dio-mobile/app_SoccerNews/app/src/main/res/drawable/ic_launcher_background.xml" value="0.123" />
+        <entry key="..\:/Users/bruno.dorea/Desktop/Projetos/labs-dio-mobile/app_SoccerNews/app/src/main/res/drawable/ic_star.xml" value="0.123" />
         <entry key="..\:/Users/bruno.dorea/Desktop/Projetos/labs-dio-mobile/app_SoccerNews/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/bruno.dorea/Desktop/Projetos/labs-dio-mobile/app_SoccerNews/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/bruno.dorea/Desktop/Projetos/labs-dio-mobile/app_SoccerNews/app/src/main/res/layout/fragment_home.xml" value="0.2" />
